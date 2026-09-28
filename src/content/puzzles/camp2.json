@@ -1,0 +1,434 @@
+[
+  {
+    "id": "c2-l1-p01",
+    "camp": 2,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I have a spine but no bones, and pages but no phone. Open me up and you're never alone.",
+    "answers": ["book", "a book"],
+    "hints": [
+      "You read me quietly or aloud.",
+      "I am full of words and sometimes pictures.",
+      "I have a cover and many pages inside."
+    ],
+    "explanation": "A book has a spine holding its pages together, and reading it can feel like company.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l1-p02",
+    "camp": 2,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I have a head and a tail but no body. Flip me when you can't decide.",
+    "answers": ["coin", "a coin"],
+    "hints": [
+      "I am round and made of metal.",
+      "You toss me in the air to make a choice.",
+      "One side of me is called 'heads', the other 'tails'."
+    ],
+    "explanation": "A coin has a 'heads' side and a 'tails' side, which is why flipping it helps make quick choices.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l1-p03",
+    "camp": 2,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "After the rain I lie on the path, holding the whole sky in my lap. Step in me and I'll splash you back.",
+    "answers": ["puddle", "a puddle"],
+    "hints": [
+      "I am small, wet, and found on the ground.",
+      "I form after it rains.",
+      "I can reflect clouds like a tiny mirror."
+    ],
+    "explanation": "Still water in a puddle reflects light the way a mirror does, showing the sky above.",
+    "skill": "knowledge",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l1-p04",
+    "camp": 2,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I have feathers but I never fly, and I say 'hoo' when the moon is high.",
+    "answers": ["owl", "an owl"],
+    "hints": [
+      "I am awake at night and sleep in the day.",
+      "I have big round eyes that see in the dark.",
+      "I make a hooting sound in the forest."
+    ],
+    "explanation": "Owls are nocturnal birds with big eyes for seeing in the dark and a hooting call.",
+    "skill": "knowledge",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l1-p05",
+    "camp": 2,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I have eight thin legs and I love to weave. I catch my dinner while you can't see.",
+    "answers": ["spider", "a spider"],
+    "hints": [
+      "I build sticky traps between branches.",
+      "I have more legs than an insect.",
+      "My web sparkles with dew in the morning."
+    ],
+    "explanation": "Spiders spin webs from silk to catch insects for food, and they have eight legs.",
+    "skill": "knowledge",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l1-p06",
+    "camp": 2,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I wear a bushy tail and love to climb, hiding my nuts to eat another time.",
+    "answers": ["squirrel", "a squirrel"],
+    "hints": [
+      "I scamper up and down tree trunks.",
+      "I bury acorns to save for winter.",
+      "My tail is big, fluffy, and curls over my back."
+    ],
+    "explanation": "Squirrels bury nuts and acorns in autumn so they have food to find later in winter.",
+    "skill": "knowledge",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l1-p07",
+    "camp": 2,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I fall from an oak and wear a little cap. Plant me deep and I'll grow with a nap.",
+    "answers": ["acorn", "an acorn"],
+    "hints": [
+      "I am small, brown, and shaped like a teardrop.",
+      "Squirrels love to bury and eat me.",
+      "I grow into a mighty oak tree one day."
+    ],
+    "explanation": "An acorn is the seed of an oak tree and can grow into a new oak if planted.",
+    "skill": "knowledge",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l1-p08",
+    "camp": 2,
+    "level": 1,
+    "type": "limerick-riddle",
+    "prompt": "I'm round and I'm stretchy and bright,\nYou fill me with air till I'm tight.\nLet go of my end\nAnd I'll zoom round, my friend,\nWith a rude little squeal in my flight.",
+    "answers": ["balloon", "a balloon"],
+    "hints": [
+      "I float or zip around at parties.",
+      "You blow air into me until I'm big and round.",
+      "If you let go of me before tying a knot, I fly wildly and make a funny noise."
+    ],
+    "explanation": "An untied balloon shoots air out fast, making it zoom around and squeal.",
+    "skill": "rhyme",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l2-p01",
+    "camp": 2,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "You can catch me but you can't throw me, and I make you go 'achoo!'",
+    "answers": ["a cold", "cold", "the common cold"],
+    "hints": [
+      "I make your nose runny and your throat scratchy.",
+      "You feel worse when I catch you in winter.",
+      "People say 'catching' me, but it's really tiny germs."
+    ],
+    "explanation": "You 'catch' a cold when germs spread to you, even though nothing is really thrown.",
+    "skill": "vocabulary",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l2-p02",
+    "camp": 2,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I have many rings but no fingers. Count them to learn how old I am.",
+    "answers": ["tree", "a tree"],
+    "hints": [
+      "I stand tall with branches and leaves.",
+      "You'd have to cut me down to see my rings.",
+      "Each ring inside my trunk means one more year of growing."
+    ],
+    "explanation": "Trees grow one new ring in their trunk each year, so counting them tells you their age.",
+    "skill": "knowledge",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l2-p03",
+    "camp": 2,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I have a thousand needles but I never sew. I stay green even under the snow.",
+    "answers": ["pine tree", "pine", "a pine tree"],
+    "hints": [
+      "My leaves are thin, sharp, and green all year.",
+      "I often get decorated at winter holidays.",
+      "I make cones instead of flowers."
+    ],
+    "explanation": "Pine trees have needle-shaped leaves that stay green through winter, unlike many other trees.",
+    "skill": "knowledge",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l2-p04",
+    "camp": 2,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I follow you closely wherever you shout, repeating your words but I'm never about.",
+    "answers": ["echo", "an echo"],
+    "hints": [
+      "I happen in canyons, caves, and empty halls.",
+      "I repeat back the last thing you said.",
+      "I am really just sound bouncing off something far away."
+    ],
+    "explanation": "An echo happens when sound waves bounce off a surface and come back to your ears.",
+    "skill": "knowledge",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l2-p05",
+    "camp": 2,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I have orange fur and a bushy tail too, and I sneak through the forest saying 'yip-yip' to you.",
+    "answers": ["fox", "a fox"],
+    "hints": [
+      "I am known for being clever and sly.",
+      "I hunt small animals at night in the woods.",
+      "My fur is a bright reddish-orange colour."
+    ],
+    "explanation": "Foxes are known for being clever hunters with bright orange-red fur.",
+    "skill": "knowledge",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l2-p06",
+    "camp": 2,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I point the same way wherever you roam, and I always know which way is home.",
+    "answers": ["compass", "a compass"],
+    "hints": [
+      "Hikers and sailors carry me to find their way.",
+      "I have a needle that always points north.",
+      "I help you know which direction you are facing."
+    ],
+    "explanation": "A compass needle always points north because it lines up with Earth's magnetic field.",
+    "skill": "knowledge",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l2-p07",
+    "camp": 2,
+    "level": 2,
+    "type": "limerick-riddle",
+    "prompt": "I hang from a branch, sweet and round,\nA bird pecked me without a sound.\nI'm red or I'm green,\nThe crunchiest thing seen,\nAnd a worm in my core can be found.",
+    "answers": ["apple", "an apple"],
+    "hints": [
+      "I grow on trees in orchards.",
+      "'An ____ a day keeps the doctor away' is a saying about me.",
+      "I am crunchy, sweet, and sometimes have a worm hiding inside."
+    ],
+    "explanation": "Apples grow on trees and are known for being crunchy, sweet, and sometimes home to a hidden worm.",
+    "skill": "rhyme",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l2-p08",
+    "camp": 2,
+    "level": 2,
+    "type": "limerick-fill",
+    "prompt": "A penguin who lived by the sea\nWanted badly to climb up a ____.\nHe waddled and slid,\nAs most penguins did,\nAnd decided he'd rather drink tea.",
+    "answers": ["tree", "a tree"],
+    "hints": [
+      "It's tall, has branches, and grows in the ground.",
+      "The missing word rhymes with 'sea' and 'tea'.",
+      "Penguins can't climb one very easily with their tiny flippers."
+    ],
+    "explanation": "The missing word is 'tree', which rhymes with 'sea' and 'tea' to finish the limerick.",
+    "skill": "rhyme",
+    "difficulty": 4,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l3-p01",
+    "camp": 2,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I have branches but no leaves or bark, and I show you the way when it's getting dark.",
+    "answers": ["signpost", "a signpost", "sign post", "sign"],
+    "hints": [
+      "I stand beside roads and paths.",
+      "My 'branches' are really arrows or boards with words.",
+      "I tell travellers which direction to go."
+    ],
+    "explanation": "A signpost has arms pointing in different directions like branches, guiding travellers.",
+    "skill": "vocabulary",
+    "difficulty": 5,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l3-p02",
+    "camp": 2,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I am carried by the wind without any wings, and I scatter little seeds as I go through things.",
+    "answers": ["dandelion seed", "dandelion", "a dandelion"],
+    "hints": [
+      "I start as a bright yellow flower.",
+      "I turn into a fluffy white ball you can blow on.",
+      "Each tiny puff carries a seed far away."
+    ],
+    "explanation": "A dandelion's fluffy seeds ride the wind so new dandelions can grow far from the first one.",
+    "skill": "knowledge",
+    "difficulty": 5,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l3-p03",
+    "camp": 2,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I creep along on a hundred tiny feet, munching on leaves as my favourite treat.",
+    "answers": ["caterpillar", "a caterpillar"],
+    "hints": [
+      "I will one day turn into a butterfly.",
+      "I am long, soft, and sometimes fuzzy.",
+      "I move in a wriggling, wave-like way."
+    ],
+    "explanation": "A caterpillar eats leaves and later transforms into a butterfly or moth.",
+    "skill": "knowledge",
+    "difficulty": 5,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l3-p04",
+    "camp": 2,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I am a house with no doors or windows, carried on the back of the one who grows.",
+    "answers": ["shell", "a shell", "turtle shell"],
+    "hints": [
+      "A turtle or a snail might have me.",
+      "I am hard on the outside to protect what's inside.",
+      "I grow along with my owner over time."
+    ],
+    "explanation": "A shell is a hard covering that grows with an animal like a turtle or snail, protecting its soft body.",
+    "skill": "knowledge",
+    "difficulty": 5,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l3-p05",
+    "camp": 2,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I light up the night without any flame, and I blink in the grass, a tiny bug's game.",
+    "answers": ["firefly", "a firefly", "lightning bug", "a lightning bug"],
+    "hints": [
+      "I glow on warm summer evenings.",
+      "I am a small flying beetle.",
+      "My glow comes from a special part of my body, not fire."
+    ],
+    "explanation": "Fireflies make their own light through a chemical reaction in their bodies, not real fire.",
+    "skill": "knowledge",
+    "difficulty": 5,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l3-p06",
+    "camp": 2,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I have a hundred eyes but cannot see, and I decorate a bird's tail for all to see.",
+    "answers": ["peacock feather", "feather", "a feather"],
+    "hints": [
+      "I am light, thin, and often colourful.",
+      "Birds are covered in me to help them fly and stay warm.",
+      "A peacock's tail is famous for having many of these with eye-like spots."
+    ],
+    "explanation": "A peacock's tail feathers have round, eye-like spots used to show off and attract mates.",
+    "skill": "knowledge",
+    "difficulty": 5,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l3-p07",
+    "camp": 2,
+    "level": 3,
+    "type": "limerick-riddle",
+    "prompt": "I hum through the trees when it blows,\nI tickle your ears and your nose.\nYou can't see my face,\nBut you feel me chase\nThe leaves wherever it goes.",
+    "answers": ["wind", "the wind"],
+    "hints": [
+      "You can't see me, only feel and hear me.",
+      "I make flags flap and kites fly.",
+      "I blow leaves and branches around."
+    ],
+    "explanation": "Wind is moving air, so you can never see it directly, only feel its effects.",
+    "skill": "rhyme",
+    "difficulty": 5,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c2-l3-p08",
+    "camp": 2,
+    "level": 3,
+    "type": "limerick-fill",
+    "prompt": "A fox in the forest one night,\nWent looking for something to ____.\nHe sniffed at a log,\nThen spotted a frog,\nAnd chased it with all of his might.",
+    "answers": ["bite"],
+    "hints": [
+      "It's what a hungry animal wants to do to food.",
+      "The missing word rhymes with 'night' and 'might'.",
+      "A fox looking for dinner wants to catch and eat something."
+    ],
+    "explanation": "The missing word is 'bite', which rhymes with 'night' and 'might' to finish the limerick.",
+    "skill": "rhyme",
+    "difficulty": 5,
+    "source": "original",
+    "reviewed": true
+  }
+]
