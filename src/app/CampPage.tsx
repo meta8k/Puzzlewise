@@ -1,7 +1,6 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { campInfo } from "./camps";
-import { puzzlesForCampLevel } from "../content/loadPuzzles";
-import { isLevelUnlocked, levelSolvedCount, levelStars } from "../state/progress";
+import { getLevelSession, isLevelUnlocked } from "../state/progress";
 import { Stars } from "../components/Stars";
 import styles from "./CampPage.module.css";
 
@@ -28,10 +27,9 @@ export function CampPage() {
 
       <ul className={styles.levelList}>
         {LEVELS.map((level) => {
-          const puzzles = puzzlesForCampLevel(camp.id, level);
-          const unlocked = isLevelUnlocked(camp.id, level, puzzlesForCampLevel);
-          const solved = levelSolvedCount(puzzles.map((p) => p.id));
-          const stars = levelStars(puzzles.map((p) => p.id));
+          const unlocked = isLevelUnlocked(camp.id, level);
+          const session = getLevelSession(camp.id, level);
+          const total = session?.totalOutOf ?? 8;
 
           const body = (
             <div className={[styles.level, unlocked ? "" : styles.locked].join(" ")}>
@@ -41,22 +39,19 @@ export function CampPage() {
               <div className={styles.levelBody}>
                 <h2 className={styles.levelName}>Level {level}</h2>
                 <p className={styles.levelProgress}>
-                  {solved}/{puzzles.length} solved
+                  {session ? `Best: ${session.bestSolved}/${total} solved` : "Not played yet"}
                 </p>
               </div>
-              {unlocked ? <Stars count={Math.min(3, Math.round(stars / puzzles.length))} /> : <span aria-label="Locked">🔒</span>}
+              {unlocked ? (
+                <Stars count={session ? Math.min(3, Math.round(session.bestStars / total)) : 0} />
+              ) : (
+                <span aria-label="Locked">🔒</span>
+              )}
             </div>
           );
 
           return (
-            <li key={level} className={styles.levelItem}>
-              {unlocked ? <Link to={`/camp/${camp.id}/level/${level}`}>{body}</Link> : body}
-              {unlocked && (
-                <Link to={`/camp/${camp.id}/level/${level}/generated`} className={styles.generateLink}>
-                  ✨ Generate new puzzles
-                </Link>
-              )}
-            </li>
+            <li key={level}>{unlocked ? <Link to={`/camp/${camp.id}/level/${level}`}>{body}</Link> : body}</li>
           );
         })}
       </ul>

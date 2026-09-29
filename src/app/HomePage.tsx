@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { CAMPS } from "./camps";
-import { puzzlesForCampLevel } from "../content/loadPuzzles";
 import { isLevelUnlocked } from "../state/progress";
 import { useTheme } from "./theme";
 import styles from "./HomePage.module.css";
 
 function isCampUnlocked(campId: number): boolean {
   if (campId === 1) return true;
-  return isLevelUnlocked(campId, 1, puzzlesForCampLevel);
+  return isLevelUnlocked(campId, 1);
 }
 
 export function HomePage() {
