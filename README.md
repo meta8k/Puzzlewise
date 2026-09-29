@@ -33,12 +33,15 @@ correctly.
 
 ## What to click to try it
 
-1. On the home screen (the mountain), click **Meadow** (Camp 1).
-2. Click **Level 1**.
+1. You'll land on the **home page** — click **Start Climbing** to enter the
+   mountain.
+2. Click **Meadow** (Camp 1), then **Level 1**.
 3. Read the riddle (or click the 🔊 speaker icon to have it read aloud).
 4. Type an answer and click **Check**.
    - A wrong answer gives a gentle nudge and offers a hint.
-   - After 3 wrong tries, you can click "Show me the answer".
+   - You get 3 tries; after the 3rd wrong try, the answer and explanation
+     are revealed automatically.
+   - Stuck or bored of one? Click **Skip this one** to move on any time.
    - A correct answer shows stars and a short explanation of why that's
      the answer.
 5. Click **Next puzzle** to continue, or **Exit level** to go back.
@@ -50,7 +53,7 @@ correctly.
 
 ```
 src/
-  app/            routes, layout, theme (light/dark), the 3 screens
+  app/            routes, layout, theme (light/dark), the landing page + 3 game screens
   components/     shared UI: Button, HintLadder, ReadAloud, Stars
   puzzles/        one component per puzzle type + registry.tsx
   content/        puzzles/*.json, schema.ts (validation rules)

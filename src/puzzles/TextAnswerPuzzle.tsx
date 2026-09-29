@@ -26,6 +26,7 @@ export function TextAnswerPuzzle({ puzzle, onComplete, promptClassName }: Props)
   const [tries, setTries] = useState(0);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [status, setStatus] = useState<"playing" | "solved" | "revealed">("playing");
+  const [revealReason, setRevealReason] = useState<"tries" | "skip" | null>(null);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -43,21 +44,20 @@ export function TextAnswerPuzzle({ puzzle, onComplete, promptClassName }: Props)
     } else {
       const nextTries = tries + 1;
       setTries(nextTries);
+      setGuess("");
       if (nextTries >= MAX_TRIES_BEFORE_REVEAL) {
-        setFeedback(null);
+        revealAnswer("tries");
       } else {
         setFeedback("Not quite. Want a hint?");
       }
-      setGuess("");
     }
   }
 
-  function revealAnswer() {
+  function revealAnswer(reason: "tries" | "skip") {
     setStatus("revealed");
+    setRevealReason(reason);
     onComplete({ solved: false, stars: 1, hintsUsed: hintsRevealed });
   }
-
-  const showRevealOption = status === "playing" && tries >= MAX_TRIES_BEFORE_REVEAL;
 
   return (
     <div className={styles.wrapper}>
@@ -96,11 +96,13 @@ export function TextAnswerPuzzle({ puzzle, onComplete, promptClassName }: Props)
             onRevealNext={() => setHintsRevealed((n) => Math.min(n + 1, puzzle.hints.length))}
           />
 
-          {showRevealOption && (
-            <Button variant="secondary" onClick={revealAnswer}>
-              Show me the answer
-            </Button>
-          )}
+          <button
+            type="button"
+            className={styles.skipLink}
+            onClick={() => revealAnswer("skip")}
+          >
+            Skip this one →
+          </button>
         </>
       )}
 
@@ -113,7 +115,8 @@ export function TextAnswerPuzzle({ puzzle, onComplete, promptClassName }: Props)
             </>
           ) : (
             <p className={styles.feedback}>
-              The answer was <strong>{puzzle.answers[0]}</strong>.
+              {revealReason === "skip" ? "No worries, here's the answer:" : "Nice try! The answer was"}{" "}
+              <strong>{puzzle.answers[0]}</strong>.
             </p>
           )}
           <div className={styles.explanationRow}>

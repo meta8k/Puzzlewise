@@ -1,14 +1,15 @@
 .button {
-  font-family: inherit;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 700;
-  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.75rem 1.75rem;
   min-height: 48px;
   min-width: 48px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 
 .button:focus-visible {
@@ -16,8 +17,13 @@
   outline-offset: 2px;
 }
 
-.button:active {
-  transform: scale(0.97);
+.button:hover:not(:disabled) {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.97) translateY(0);
 }
 
 .button:disabled {
@@ -26,9 +32,9 @@
 }
 
 .primary {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
   color: var(--color-accent-contrast);
-  box-shadow: 0 3px 0 var(--color-accent-shadow);
+  box-shadow: 0 4px 0 var(--color-accent-shadow), 0 6px 14px rgba(89, 54, 217, 0.25);
 }
 
 .secondary {
@@ -45,5 +51,9 @@
 @media (prefers-reduced-motion: reduce) {
   .button {
     transition: none;
+  }
+
+  .button:hover:not(:disabled) {
+    transform: none;
   }
 }
