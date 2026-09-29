@@ -430,5 +430,437 @@
     "difficulty": 3,
     "source": "original",
     "reviewed": true
+  },
+  {
+    "id": "c1-l1-p09",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I light up the sky by day and set at night. Without me, the world would have no light.",
+    "answers": ["sun", "the sun"],
+    "hints": [
+      "I'm a giant ball of fire far away.",
+      "Plants need me to grow.",
+      "I rise in the morning and set in the evening."
+    ],
+    "explanation": "The sun gives Earth its light and warmth during the day.",
+    "skill": "knowledge",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p10",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I glow softly at night and change my shape each week. Sometimes round, sometimes thin like a sneak.",
+    "answers": ["moon", "the moon"],
+    "hints": [
+      "I come out mostly at night.",
+      "I don't make my own light, I reflect the sun's.",
+      "I circle around the Earth."
+    ],
+    "explanation": "The moon reflects sunlight and appears to change shape as it orbits Earth.",
+    "skill": "knowledge",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p11",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I float in the sky, soft and white. Sometimes I bring rain, sometimes I'm light.",
+    "answers": ["cloud", "a cloud"],
+    "hints": [
+      "I'm made of tiny water droplets.",
+      "I float high above the ground.",
+      "When I get heavy, rain falls from me."
+    ],
+    "explanation": "Clouds are made of tiny water droplets that can fall as rain when they get heavy.",
+    "skill": "knowledge",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p12",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I grow from a seed and open wide, showing my colours with pride.",
+    "answers": ["flower", "a flower"],
+    "hints": [
+      "Bees like to visit me.",
+      "I often smell sweet.",
+      "I have petals of many colours."
+    ],
+    "explanation": "Flowers grow from seeds and open their petals to attract bees and other pollinators.",
+    "skill": "knowledge",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p13",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "You bang on me with two sticks, and I go boom, boom, in musical tricks.",
+    "answers": ["drum", "a drum"],
+    "hints": [
+      "I'm a musical instrument.",
+      "I'm round with a tight skin on top.",
+      "You hit me to make a beat."
+    ],
+    "explanation": "A drum makes sound when its tight skin is struck, creating a rhythmic beat.",
+    "skill": "vocabulary",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p14",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I cover your foot before your shoe, keeping your toes warm too.",
+    "answers": ["sock", "a sock", "socks"],
+    "hints": [
+      "I come in pairs.",
+      "I'm made of soft fabric.",
+      "You wear me on your feet, under your shoes."
+    ],
+    "explanation": "Socks are worn on your feet to keep them warm and comfortable inside your shoes.",
+    "skill": "vocabulary",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p15",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I'm soft and fluffy, you rest your head on me at night, dreaming till daylight.",
+    "answers": ["pillow", "a pillow"],
+    "hints": [
+      "I sit on your bed.",
+      "I'm stuffed with soft filling.",
+      "You rest your head on me while you sleep."
+    ],
+    "explanation": "A pillow supports your head while you sleep, making it more comfortable.",
+    "skill": "vocabulary",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p16",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I hop and I hide in tall green grass, croaking loud as people pass.",
+    "answers": ["frog", "a frog"],
+    "hints": [
+      "I live near ponds.",
+      "I start life as a tadpole.",
+      "I make a croaking sound."
+    ],
+    "explanation": "Frogs live near water and make a croaking sound, starting life as tadpoles.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p09",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I carry my home wherever I roam, slow and steady, never alone.",
+    "answers": ["turtle", "a turtle"],
+    "hints": [
+      "I have a hard shell.",
+      "I move very slowly on land.",
+      "I can pull my head inside my shell."
+    ],
+    "explanation": "A turtle's shell is its home, which it carries everywhere and hides inside for protection.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p10",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I sleep upside down during the day, and flutter through darkness to find my way.",
+    "answers": ["bat", "a bat"],
+    "hints": [
+      "I'm active at night.",
+      "I hang from my feet when I sleep.",
+      "I use sound to find my way in the dark."
+    ],
+    "explanation": "Bats sleep upside down in the day and use echolocation to navigate at night.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p11",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I have wings but I'm not a bird, I flutter from flower to flower, so I've heard.",
+    "answers": ["butterfly", "a butterfly"],
+    "hints": [
+      "I was once a caterpillar.",
+      "My wings are colourful and delicate.",
+      "I sip nectar from flowers."
+    ],
+    "explanation": "A butterfly starts life as a caterpillar before transforming and growing colourful wings.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p12",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I waddle on land but swim with ease, quacking loudly as I please.",
+    "answers": ["duck", "a duck"],
+    "hints": [
+      "I have webbed feet.",
+      "I make a quacking sound.",
+      "I love swimming in ponds."
+    ],
+    "explanation": "Ducks have webbed feet that help them swim easily, even though they waddle on land.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p13",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I purr when I'm happy and chase a string, curling up soft is my favourite thing.",
+    "answers": ["cat", "a cat"],
+    "hints": [
+      "I'm a common house pet.",
+      "I chase mice and string.",
+      "I make a purring sound when content."
+    ],
+    "explanation": "Cats purr when they're happy or relaxed, often while curled up and resting.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p14",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I bark and I fetch and wag my tail with glee, the best furry friend that you'll ever see.",
+    "answers": ["dog", "a dog"],
+    "hints": [
+      "I'm known as man's best friend.",
+      "I wag my tail when happy.",
+      "I like to fetch balls and sticks."
+    ],
+    "explanation": "Dogs wag their tails when happy and are known for their loyal friendship.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p15",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I have a hump or two on my back, and cross the desert sand without track.",
+    "answers": ["camel", "a camel"],
+    "hints": [
+      "I live in hot, dry deserts.",
+      "I store fat in my hump for energy.",
+      "I can go a long time without water."
+    ],
+    "explanation": "A camel stores fat in its hump, which helps it survive long journeys without water.",
+    "skill": "knowledge",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p16",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I'm black and white and I love to swim, though I can't fly, I paddle and skim.",
+    "answers": ["penguin", "a penguin"],
+    "hints": [
+      "I live in cold places like Antarctica.",
+      "I waddle on land but swim gracefully.",
+      "I'm a bird, but I cannot fly."
+    ],
+    "explanation": "Penguins are birds that cannot fly, but they are excellent swimmers.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p09",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I have no legs but I stand up tall, lighting the room so you don't fall.",
+    "answers": ["lamp", "a lamp"],
+    "hints": [
+      "I sit on a table or in a corner.",
+      "I have a bulb inside me.",
+      "You switch me on when it's dark."
+    ],
+    "explanation": "A lamp lights up a room using a bulb, helping you see in the dark.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p10",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I fold up small but show the whole land, with roads and rivers close at hand.",
+    "answers": ["map", "a map"],
+    "hints": [
+      "I help you find your way.",
+      "I show mountains, roads, and rivers.",
+      "I can be folded up and carried in a pocket."
+    ],
+    "explanation": "A map shows the layout of land, roads, and rivers to help people find their way.",
+    "skill": "knowledge",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p11",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I whistle and steam before I depart, carrying people, a mighty iron heart.",
+    "answers": ["train", "a train"],
+    "hints": [
+      "I travel on tracks.",
+      "I can carry many passengers at once.",
+      "I sometimes whistle before leaving the station."
+    ],
+    "explanation": "A train travels on tracks and can carry many people or goods at once.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p12",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I fly through the sky with a trail of white, leaving a path high up in flight.",
+    "answers": ["airplane", "an airplane", "aeroplane", "an aeroplane", "plane", "a plane"],
+    "hints": [
+      "I have wings but I'm not a bird.",
+      "I carry passengers high above the clouds.",
+      "I sometimes leave a white trail in the sky."
+    ],
+    "explanation": "An airplane flies using its wings and engines, sometimes leaving a visible trail behind it.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p13",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I have four wheels and roll down the road, carrying people and sometimes a load.",
+    "answers": ["car", "a car"],
+    "hints": [
+      "I need fuel or electricity to run.",
+      "I have a steering wheel inside.",
+      "People drive me on roads to get places."
+    ],
+    "explanation": "A car has four wheels and is driven on roads to carry people and things.",
+    "skill": "vocabulary",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p14",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I ring at your door to say someone's near, press my button and the sound is clear.",
+    "answers": ["doorbell", "a doorbell"],
+    "hints": [
+      "I'm found next to a front door.",
+      "You press a button to use me.",
+      "I make a ringing sound when pressed."
+    ],
+    "explanation": "A doorbell rings when its button is pressed, letting people inside know someone has arrived.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p15",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I hold your drink, hot or cold, in my handle you can hold.",
+    "answers": ["mug", "a mug"],
+    "hints": [
+      "I'm often used for tea or coffee.",
+      "I have a handle on my side.",
+      "I'm made of ceramic or a ceramic-like material."
+    ],
+    "explanation": "A mug is a cup with a handle, often used for hot drinks like tea or coffee.",
+    "skill": "vocabulary",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p16",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I sweep the floor from side to side, bristles ready, dirt can't hide.",
+    "answers": ["broom", "a broom"],
+    "hints": [
+      "I have a long handle and bristles.",
+      "I'm used for cleaning floors.",
+      "Witches are often pictured flying on me!"
+    ],
+    "explanation": "A broom has bristles that sweep dirt and dust off the floor.",
+    "skill": "vocabulary",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
   }
 ]

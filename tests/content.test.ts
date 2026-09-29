@@ -13,11 +13,11 @@ describe("puzzle content", () => {
     expect(uniqueIds.size).toBe(ids.length);
   });
 
-  it("has 24 puzzles for each of camp 1 and camp 2, 8 per level", () => {
+  it("has 48 puzzles for each of camp 1 and camp 2, 16 per level", () => {
     for (const camp of [1, 2]) {
       for (const level of [1, 2, 3]) {
         const count = allPuzzles.filter((p) => p.camp === camp && p.level === level).length;
-        expect(count).toBe(8);
+        expect(count).toBe(16);
       }
     }
   });
@@ -49,7 +49,10 @@ describe("puzzle content", () => {
     for (const answer of puzzle.answers) {
       const normalisedAnswer = normalise(answer);
       if (normalisedAnswer.length === 0) continue;
-      expect(normalisedPrompt.includes(normalisedAnswer)).toBe(false);
+      // Word-boundary match, so "car" doesn't false-positive on "carrying".
+      const escaped = normalisedAnswer.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const pattern = new RegExp(`\\b${escaped}\\b`);
+      expect(pattern.test(normalisedPrompt)).toBe(false);
     }
   });
 });

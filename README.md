@@ -4,9 +4,11 @@ A riddle and puzzle website for kids aged 6-12. Climb a mountain by solving
 riddles and limericks, camp by camp.
 
 This is **Phase 1**: the playable core. Only Camp 1 (Meadow) and Camp 2
-(Forest) have content so far — 48 puzzles in total. Later phases will add
-the harder camps, online trivia/rhyme games, a grown-up puzzle generator,
-and deployment to a live website.
+(Forest) have content so far — 96 puzzles in total, 16 per level. Each
+level draws a fresh, non-repeating set of 8 from its pool of 16 every time
+it's opened, so replaying a level doesn't always show the same puzzles.
+Later phases will add the harder camps, online trivia/rhyme games, a
+grown-up puzzle generator, and deployment to a live website.
 
 ## How to run it
 
@@ -58,7 +60,7 @@ src/
   puzzles/        one component per puzzle type + registry.tsx
   content/        puzzles/*.json, schema.ts (validation rules)
   services/       speech.ts (read-aloud)
-  state/          progress.ts (saved to your browser's localStorage)
+  state/          progress.ts, puzzleDeck.ts (saved to your browser's localStorage)
   lib/            answerMatching.ts, shuffle.ts
 tests/            automated checks (vitest)
 ```
