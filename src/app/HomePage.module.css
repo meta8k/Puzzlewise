@@ -4,6 +4,19 @@
   padding: 1rem 1rem 3rem;
 }
 
+.homeLink {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.homeLink:hover,
+.homeLink:focus-visible {
+  color: var(--color-text);
+}
+
 .header {
   display: flex;
   align-items: center;

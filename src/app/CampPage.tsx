@@ -12,12 +12,12 @@ export function CampPage() {
   const camp = campInfo(Number(campId));
 
   if (!camp || !camp.hasContent) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/mountain" replace />;
   }
 
   return (
     <div className={[styles.page, camp.paletteClass].join(" ")}>
-      <Link to="/" className={styles.backLink}>
+      <Link to="/mountain" className={styles.backLink}>
         ← Back to the mountain
       </Link>
       <h1 className={styles.title}>

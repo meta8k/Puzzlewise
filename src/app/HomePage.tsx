@@ -15,8 +15,11 @@ export function HomePage() {
 
   return (
     <div className={styles.page}>
+      <Link to="/" className={styles.homeLink}>
+        ← Puzzle Peaks home
+      </Link>
       <header className={styles.header}>
-        <h1 className={styles.title}>Puzzle Peaks</h1>
+        <h1 className={styles.title}>The Mountain</h1>
         <button
           type="button"
           className={styles.themeToggle}

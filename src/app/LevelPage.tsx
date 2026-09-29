@@ -24,7 +24,7 @@ export function LevelPage() {
   const [sessionSolved, setSessionSolved] = useState(0);
 
   if (!camp || !camp.hasContent || puzzles.length === 0 || Number.isNaN(level)) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/mountain" replace />;
   }
 
   const puzzle = puzzles[index];

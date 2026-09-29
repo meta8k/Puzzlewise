@@ -1,12 +1,20 @@
 :root {
-  --color-bg: #fdfaf3;
+  --font-heading: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-bg: #faf8ff;
   --color-surface: #ffffff;
-  --color-text: #22262b;
-  --color-border: #d9d2c2;
-  --color-focus: #1d5fd6;
-  --color-accent: #2f8f5b;
+  --color-text: #241f3d;
+  --color-text-muted: #6b6580;
+  --color-border: #e3ddf5;
+  --color-focus: #2f6fed;
+
+  --color-accent: #7c5cfc;
+  --color-accent-strong: #6a45fb;
   --color-accent-contrast: #ffffff;
-  --color-accent-shadow: #1f6b41;
+  --color-accent-shadow: #5936d9;
+
+  --gradient-hero: linear-gradient(135deg, #7c5cfc 0%, #ff6fa5 55%, #ffb648 100%);
 
   --palette-bg: #eef6ea;
   --palette-border: #9fcf8f;
@@ -15,14 +23,19 @@
 }
 
 :root[data-theme="dark"] {
-  --color-bg: #14181c;
-  --color-surface: #1f252b;
-  --color-text: #f1f0ea;
-  --color-border: #3a4149;
-  --color-focus: #7fb0ff;
-  --color-accent: #3fae74;
-  --color-accent-contrast: #0c1210;
-  --color-accent-shadow: #1f6b41;
+  --color-bg: #171226;
+  --color-surface: #221b38;
+  --color-text: #f3f0ff;
+  --color-text-muted: #b3aacb;
+  --color-border: #3a3157;
+  --color-focus: #8fb4ff;
+
+  --color-accent: #9b82ff;
+  --color-accent-strong: #8569ff;
+  --color-accent-contrast: #171226;
+  --color-accent-shadow: #5936d9;
+
+  --gradient-hero: linear-gradient(135deg, #4b3aa6 0%, #a13c78 55%, #c97a2c 100%);
 
   --palette-bg: #1c2620;
   --palette-border: #3f6e46;
@@ -31,37 +44,37 @@
 }
 
 .camp-meadow {
-  --palette-bg: #eef6ea;
-  --palette-border: #9fcf8f;
-  --palette-accent: #4f9a5a;
+  --palette-bg: #eafbf0;
+  --palette-border: #7fe0a4;
+  --palette-accent: #17a664;
   --palette-accent-contrast: #ffffff;
 }
 
 .camp-forest {
-  --palette-bg: #e6f0e6;
-  --palette-border: #5a9668;
-  --palette-accent: #2f6b3f;
+  --palette-bg: #e7fbf4;
+  --palette-border: #5fd6ae;
+  --palette-accent: #0d8f6e;
   --palette-accent-contrast: #ffffff;
 }
 
 .camp-river {
-  --palette-bg: #e5f2f6;
-  --palette-border: #6fb3c9;
-  --palette-accent: #2c7f99;
+  --palette-bg: #eaf4ff;
+  --palette-border: #7cb8f9;
+  --palette-accent: #2f7de0;
   --palette-accent-contrast: #ffffff;
 }
 
 .camp-cliffs {
-  --palette-bg: #f0e9e2;
-  --palette-border: #b08a63;
-  --palette-accent: #8a5a34;
+  --palette-bg: #fff2e8;
+  --palette-border: #ffb677;
+  --palette-accent: #e2670f;
   --palette-accent-contrast: #ffffff;
 }
 
 .camp-summit {
-  --palette-bg: #eef1f6;
-  --palette-border: #9aa9c9;
-  --palette-accent: #4a5b8c;
+  --palette-bg: #f4efff;
+  --palette-border: #c4aefb;
+  --palette-accent: #7c4fe0;
   --palette-accent-contrast: #ffffff;
 }
 
@@ -70,8 +83,8 @@
 :root[data-theme="dark"] .camp-river,
 :root[data-theme="dark"] .camp-cliffs,
 :root[data-theme="dark"] .camp-summit {
-  --palette-bg: #1c2226;
-  --palette-accent-contrast: #0c1210;
+  --palette-bg: #201a33;
+  --palette-accent-contrast: #171226;
 }
 
 * {
@@ -86,9 +99,17 @@ body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
 }
 
 a {
