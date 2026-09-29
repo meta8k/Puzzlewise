@@ -1,0 +1,434 @@
+[
+  {
+    "id": "c1-l1-p01",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I wake up when you do and follow you all day. But when the sun goes to sleep, I slip away. What am I?",
+    "answers": ["shadow", "a shadow", "your shadow"],
+    "hints": [
+      "I only appear when there is light.",
+      "You see me on the ground, and I copy your moves.",
+      "I disappear at night when the sun is gone."
+    ],
+    "explanation": "A shadow appears when your body blocks light from reaching the ground.",
+    "skill": "knowledge",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p02",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I'm yellow and bendy and come in a bunch. Peel off my jacket and eat me for lunch.",
+    "answers": ["banana", "a banana"],
+    "hints": [
+      "Monkeys love to eat me.",
+      "You have to peel my skin off first.",
+      "I grow in a bunch on a tall tree."
+    ],
+    "explanation": "Bananas grow in bunches and have a peel you take off before eating.",
+    "skill": "vocabulary",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p03",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I have lots of teeth but I never bite. I help your hair look neat and right.",
+    "answers": ["comb", "a comb"],
+    "hints": [
+      "You use me in front of a mirror.",
+      "I have many thin, straight teeth in a row.",
+      "I glide through your hair to untangle it."
+    ],
+    "explanation": "A comb has thin teeth that gently untangle and neaten your hair.",
+    "skill": "vocabulary",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p04",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "When rain comes down, I go up. I keep you dry all over town.",
+    "answers": ["umbrella", "an umbrella"],
+    "hints": [
+      "You carry me on a rainy day.",
+      "I open up wide like a little roof.",
+      "You hold my handle over your head."
+    ],
+    "explanation": "An umbrella opens up above your head to keep rain off you.",
+    "skill": "vocabulary",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p05",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I'm cold and white and fall in flakes. I melt away when summer wakes.",
+    "answers": ["snow"],
+    "hints": [
+      "I fall from the sky in winter.",
+      "Kids like to build men out of me.",
+      "I am made of tiny frozen flakes."
+    ],
+    "explanation": "Snow is frozen water that falls from cold winter clouds and melts in warm weather.",
+    "skill": "knowledge",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p06",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I have four legs but I never walk. You sit on me when you eat and talk.",
+    "answers": ["chair", "a chair"],
+    "hints": [
+      "You find me at the dinner table.",
+      "I have a seat and a back to lean on.",
+      "You rest your legs by sitting on me."
+    ],
+    "explanation": "A chair has legs like an animal, but it stays still while you sit on it.",
+    "skill": "vocabulary",
+    "difficulty": 1,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p07",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I have two hands but no fingers, and a face but no eyes. I tell you when to wake up and when to say goodbye.",
+    "answers": ["clock", "a clock"],
+    "hints": [
+      "You look at me to know the time.",
+      "My hands point at numbers instead of holding things.",
+      "I tick and hang on walls or sit on tables."
+    ],
+    "explanation": "A clock has hands that point to numbers to show what time it is.",
+    "skill": "vocabulary",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l1-p08",
+    "camp": 1,
+    "level": 1,
+    "type": "riddle",
+    "prompt": "I'm full of holes, but I still hold water. Wipe the table and I'll do it faster.",
+    "answers": ["sponge", "a sponge"],
+    "hints": [
+      "You find me in the kitchen sink.",
+      "I soak up spills and soapy water.",
+      "I am soft and squeezable, full of tiny holes."
+    ],
+    "explanation": "A sponge is full of tiny holes that soak up water, which is why it cleans up spills so well.",
+    "skill": "vocabulary",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p01",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I hop through the garden both day and night, munching on carrots with a happy bite.",
+    "answers": ["rabbit", "a rabbit", "bunny", "a bunny"],
+    "hints": [
+      "I have long ears and a fluffy tail.",
+      "I love to eat carrots and lettuce.",
+      "I move by hopping on my strong back legs."
+    ],
+    "explanation": "Rabbits have strong back legs built for hopping and love crunchy vegetables like carrots.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p02",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I have a long neck but no voice at all, taller than you, taller than a wall.",
+    "answers": ["giraffe", "a giraffe"],
+    "hints": [
+      "I live on the African savannah.",
+      "I use my long neck to reach leaves high up.",
+      "I am the tallest animal in the world."
+    ],
+    "explanation": "A giraffe's long neck lets it reach leaves at the top of tall trees.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p03",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I buzz all day and visit flowers, making something sweet in busy hours.",
+    "answers": ["bee", "a bee"],
+    "hints": [
+      "I live in a hive with many friends.",
+      "I collect pollen from flower to flower.",
+      "I make honey that people love to eat."
+    ],
+    "explanation": "Bees fly from flower to flower collecting pollen and nectar, which they turn into honey.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p04",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I have a trunk but I'm not a tree. I use it to drink and to spray water with glee.",
+    "answers": ["elephant", "an elephant"],
+    "hints": [
+      "I am one of the biggest animals on land.",
+      "My trunk is really a very long nose.",
+      "I have huge floppy ears and grey skin."
+    ],
+    "explanation": "An elephant's trunk is a long, flexible nose it uses to drink, breathe, and spray water.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p05",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I have a tail and I like cheese. I hide in walls and holes with ease.",
+    "answers": ["mouse", "a mouse"],
+    "hints": [
+      "Cats like to chase me.",
+      "I am small, grey, and quick.",
+      "I squeak and nibble on cheese."
+    ],
+    "explanation": "Mice are small animals that like to nibble on cheese and hide in small, tight spaces.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p06",
+    "camp": 1,
+    "level": 2,
+    "type": "riddle",
+    "prompt": "I wear a shell upon my back, and carry my house on every track.",
+    "answers": ["snail", "a snail"],
+    "hints": [
+      "I move very, very slowly.",
+      "I leave a shiny, slimy trail behind me.",
+      "My shell is round and I never take it off."
+    ],
+    "explanation": "A snail carries its round shell everywhere, using it as a home it never leaves behind.",
+    "skill": "knowledge",
+    "difficulty": 2,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p07",
+    "camp": 1,
+    "level": 2,
+    "type": "limerick-riddle",
+    "prompt": "There once was a toy made of leather,\nCovered in patches together.\nKids kick it with glee,\nBouncing wild and free,\nRain or shine, any weather.",
+    "answers": ["ball", "a ball", "football", "soccer ball"],
+    "hints": [
+      "I am round and used in games outside.",
+      "You kick me across a field with your feet.",
+      "I am covered in black and white patches."
+    ],
+    "explanation": "A football is round, covered in patches, and gets kicked around no matter the weather.",
+    "skill": "rhyme",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l2-p08",
+    "camp": 1,
+    "level": 2,
+    "type": "limerick-fill",
+    "prompt": "A kitten who loved to explore,\nWent sniffing around the front ____.\nShe pounced with a hop,\nAnd came to a stop,\nThen curled up to nap on the floor.",
+    "answers": ["door", "a door"],
+    "hints": [
+      "It's something you knock on or open to go outside.",
+      "The missing word rhymes with 'explore' and 'floor'.",
+      "You walk through it to enter or leave a house."
+    ],
+    "explanation": "The missing word is 'door', which rhymes with 'explore' and 'floor' to finish the limerick.",
+    "skill": "rhyme",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p01",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I have teeth but I never chew, I hold your jacket closed for you.",
+    "answers": ["zipper", "a zipper", "zip"],
+    "hints": [
+      "You pull me up and down.",
+      "I run in a straight line up your coat.",
+      "My little teeth lock together when you pull my tab."
+    ],
+    "explanation": "A zipper's teeth lock together to hold two sides of clothing shut.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p02",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I fly high without wings or feathers, tied to a string in windy weather.",
+    "answers": ["kite", "a kite"],
+    "hints": [
+      "You fly me outside on a breezy day.",
+      "I am held by a long string from the ground.",
+      "I am often shaped like a diamond with a tail."
+    ],
+    "explanation": "A kite has no wings of its own; the wind lifts it while you hold it with a string.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p03",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I have a flame but I'm not the sun, I light the dark till my wax is done.",
+    "answers": ["candle", "a candle"],
+    "hints": [
+      "You blow on me to make a wish.",
+      "I am made of wax with a wick inside.",
+      "I slowly get shorter as I burn."
+    ],
+    "explanation": "A candle burns its wax and wick to make light, getting shorter as it burns.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p04",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I show your face but I'm not a friend, I'm made of glass from end to end.",
+    "answers": ["mirror", "a mirror"],
+    "hints": [
+      "You look at me to check your hair.",
+      "I hang on walls or sit on dressers.",
+      "I reflect back whatever stands in front of me."
+    ],
+    "explanation": "A mirror is a piece of glass that reflects light so you can see your own image.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p05",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I have steps but I never walk. Lean me on a wall and up you climb.",
+    "answers": ["ladder", "a ladder"],
+    "hints": [
+      "Firefighters and painters use me a lot.",
+      "I have rungs like steps but I don't move.",
+      "You climb up me to reach something high."
+    ],
+    "explanation": "A ladder has rungs that act like steps, letting people climb up to high places.",
+    "skill": "vocabulary",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p06",
+    "camp": 1,
+    "level": 3,
+    "type": "riddle",
+    "prompt": "I appear after the rain has gone, with seven colours in a bow, shining bright 'til dawn.",
+    "answers": ["rainbow", "a rainbow"],
+    "hints": [
+      "I show up in the sky after a storm.",
+      "I have red, orange, yellow, green, blue, and more.",
+      "I curve across the sky like a colourful arch."
+    ],
+    "explanation": "A rainbow forms when sunlight passes through raindrops and splits into many colours.",
+    "skill": "knowledge",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p07",
+    "camp": 1,
+    "level": 3,
+    "type": "limerick-riddle",
+    "prompt": "I live in the water so blue,\nI flick my tail and swim through.\nI don't have a nose,\nJust gills, I suppose,\nBlowing bubbles is all that I do.",
+    "answers": ["fish", "a fish"],
+    "hints": [
+      "I breathe underwater instead of air.",
+      "I swim using fins and a tail.",
+      "You might see me in a bowl or in the sea."
+    ],
+    "explanation": "Fish breathe through gills underwater instead of lungs, which is why they blow bubbles.",
+    "skill": "rhyme",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  },
+  {
+    "id": "c1-l3-p08",
+    "camp": 1,
+    "level": 3,
+    "type": "limerick-fill",
+    "prompt": "A little egg wobbled about,\nThe mother hen gave a shout.\nCrack! went the shell,\nEverything fell,\nAnd out popped a chick with a ____.",
+    "answers": ["pout"],
+    "hints": [
+      "It's a word for a grumpy little face.",
+      "The missing word rhymes with 'about' and 'shout'.",
+      "A tired, cranky chick might make this face."
+    ],
+    "explanation": "The missing word is 'pout', which rhymes with 'about' and 'shout' to finish the limerick.",
+    "skill": "rhyme",
+    "difficulty": 3,
+    "source": "original",
+    "reviewed": true
+  }
+]

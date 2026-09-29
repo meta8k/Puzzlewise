@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.star {
+  line-height: 1;
+}
+
+.small {
+  font-size: 1rem;
+}
+
+.big {
+  font-size: 1.75rem;
+}

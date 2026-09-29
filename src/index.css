@@ -1,0 +1,108 @@
+:root {
+  --color-bg: #fdfaf3;
+  --color-surface: #ffffff;
+  --color-text: #22262b;
+  --color-border: #d9d2c2;
+  --color-focus: #1d5fd6;
+  --color-accent: #2f8f5b;
+  --color-accent-contrast: #ffffff;
+  --color-accent-shadow: #1f6b41;
+
+  --palette-bg: #eef6ea;
+  --palette-border: #9fcf8f;
+  --palette-accent: #4f9a5a;
+  --palette-accent-contrast: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #14181c;
+  --color-surface: #1f252b;
+  --color-text: #f1f0ea;
+  --color-border: #3a4149;
+  --color-focus: #7fb0ff;
+  --color-accent: #3fae74;
+  --color-accent-contrast: #0c1210;
+  --color-accent-shadow: #1f6b41;
+
+  --palette-bg: #1c2620;
+  --palette-border: #3f6e46;
+  --palette-accent: #4f9a5a;
+  --palette-accent-contrast: #0c1210;
+}
+
+.camp-meadow {
+  --palette-bg: #eef6ea;
+  --palette-border: #9fcf8f;
+  --palette-accent: #4f9a5a;
+  --palette-accent-contrast: #ffffff;
+}
+
+.camp-forest {
+  --palette-bg: #e6f0e6;
+  --palette-border: #5a9668;
+  --palette-accent: #2f6b3f;
+  --palette-accent-contrast: #ffffff;
+}
+
+.camp-river {
+  --palette-bg: #e5f2f6;
+  --palette-border: #6fb3c9;
+  --palette-accent: #2c7f99;
+  --palette-accent-contrast: #ffffff;
+}
+
+.camp-cliffs {
+  --palette-bg: #f0e9e2;
+  --palette-border: #b08a63;
+  --palette-accent: #8a5a34;
+  --palette-accent-contrast: #ffffff;
+}
+
+.camp-summit {
+  --palette-bg: #eef1f6;
+  --palette-border: #9aa9c9;
+  --palette-accent: #4a5b8c;
+  --palette-accent-contrast: #ffffff;
+}
+
+:root[data-theme="dark"] .camp-meadow,
+:root[data-theme="dark"] .camp-forest,
+:root[data-theme="dark"] .camp-river,
+:root[data-theme="dark"] .camp-cliffs,
+:root[data-theme="dark"] .camp-summit {
+  --palette-bg: #1c2226;
+  --palette-accent-contrast: #0c1210;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

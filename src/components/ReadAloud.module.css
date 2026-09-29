@@ -1,0 +1,19 @@
+.speaker {
+  font-size: 1.5rem;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 999px;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.speaker:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.speaker:active {
+  transform: scale(0.95);
+}
