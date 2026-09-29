@@ -44,6 +44,41 @@
   gap: 1rem;
 }
 
+.levelItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.generateLink {
+  align-self: center;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent-strong);
+  background: var(--color-surface);
+  border: 2px dashed var(--color-accent);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.generateLink:hover,
+.generateLink:focus-visible {
+  background: var(--palette-bg);
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .generateLink {
+    transition: none;
+  }
+}
+
 .levelList a {
   text-decoration: none;
   color: inherit;
