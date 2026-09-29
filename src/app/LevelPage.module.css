@@ -1,33 +1,106 @@
 .page {
   max-width: 640px;
   margin: 0 auto;
+  min-height: 100vh;
   padding: 1rem 1rem 3rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background: linear-gradient(180deg, var(--palette-bg) 0%, var(--color-bg) 55%);
 }
 
 .topBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .backLink {
   color: var(--color-text);
   font-size: 1.05rem;
+  text-decoration: none;
 }
 
-.progressLabel {
+.backLink:hover,
+.backLink:focus-visible {
+  text-decoration: underline;
+}
+
+.campLabel {
+  font-family: var(--font-heading);
   font-weight: 600;
-  opacity: 0.8;
+  font-size: 1.05rem;
+  background: var(--color-surface);
+  border: 2px solid var(--palette-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+}
+
+.trail {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--palette-border);
+  background: transparent;
+  transition: transform 0.15s ease;
+}
+
+.dotSolved {
+  background: var(--palette-accent);
+  border-color: var(--palette-accent);
+}
+
+.dotCurrent {
+  width: 14px;
+  height: 14px;
+  border-color: var(--palette-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--palette-accent) 25%, transparent);
+  transform: scale(1.1);
 }
 
 .card {
-  background: var(--palette-bg);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
   border: 3px solid var(--palette-border);
-  border-radius: 24px;
-  padding: 1.5rem;
+  border-radius: 28px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.cardWatermark {
+  position: absolute;
+  top: -1.5rem;
+  right: -1rem;
+  font-size: 7rem;
+  opacity: 0.1;
+  transform: rotate(12deg);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.typeBadge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--palette-bg);
+  color: var(--palette-accent);
+  border: 2px solid var(--palette-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .actions {
@@ -35,15 +108,54 @@
   justify-content: center;
 }
 
+.finishedCard {
+  background: var(--color-surface);
+  border: 3px solid var(--palette-border);
+  border-radius: 28px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.finishedEmoji {
+  font-size: 3.5rem;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .finishedEmoji {
+    animation: none;
+  }
+}
+
 .title {
   font-size: 2rem;
-  margin: 1rem 0 0;
+  margin: 0;
   text-align: center;
 }
 
 .summary {
   font-size: 1.2rem;
   text-align: center;
+  margin: 0;
 }
 
 .alreadySolvedNote {

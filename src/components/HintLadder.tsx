@@ -15,13 +15,13 @@ export function HintLadder({ hints, hintsRevealed, onRevealNext }: Props) {
     <div className={styles.wrapper}>
       {hints.slice(0, hintsRevealed).map((hint, i) => (
         <p key={i} className={styles.hint}>
-          <span className={styles.hintLabel}>Hint {i + 1}:</span> {hint}
+          <span className={styles.hintLabel}>💡 Hint {i + 1}:</span> {hint}
           <ReadAloud text={hint} label={`Read hint ${i + 1} aloud`} />
         </p>
       ))}
       {canRevealMore && (
         <Button variant="secondary" onClick={onRevealNext}>
-          {hintsRevealed === 0 ? "Show a hint" : "Show another hint"}
+          {hintsRevealed === 0 ? "💡 Show a hint" : "💡 Show another hint"}
         </Button>
       )}
     </div>

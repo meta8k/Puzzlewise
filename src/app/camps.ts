@@ -1,6 +1,7 @@
 export type CampInfo = {
   id: 1 | 2 | 3 | 4 | 5;
   name: string;
+  emoji: string;
   ageRange: string;
   tagline: string;
   paletteClass: string;
@@ -11,6 +12,7 @@ export const CAMPS: CampInfo[] = [
   {
     id: 1,
     name: "Meadow",
+    emoji: "🌼",
     ageRange: "6-7",
     tagline: "Everyday riddles and rhymes",
     paletteClass: "camp-meadow",
@@ -19,6 +21,7 @@ export const CAMPS: CampInfo[] = [
   {
     id: 2,
     name: "Forest",
+    emoji: "🌲",
     ageRange: "7-8",
     tagline: "Wordplay and finish-the-rhyme",
     paletteClass: "camp-forest",
@@ -27,6 +30,7 @@ export const CAMPS: CampInfo[] = [
   {
     id: 3,
     name: "River",
+    emoji: "🌊",
     ageRange: "8-10",
     tagline: "Spelling, anagrams, word ladders",
     paletteClass: "camp-river",
@@ -35,6 +39,7 @@ export const CAMPS: CampInfo[] = [
   {
     id: 4,
     name: "Cliffs",
+    emoji: "⛰️",
     ageRange: "10-11",
     tagline: "Sequences and lateral thinking",
     paletteClass: "camp-cliffs",
@@ -43,6 +48,7 @@ export const CAMPS: CampInfo[] = [
   {
     id: 5,
     name: "Summit",
+    emoji: "🏔️",
     ageRange: "11-12+",
     tagline: "Ciphers and multi-step logic",
     paletteClass: "camp-summit",

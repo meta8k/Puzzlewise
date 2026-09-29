@@ -13,4 +13,38 @@
 
 .big {
   font-size: 1.75rem;
+  display: inline-block;
+  animation: starPop 0.35s ease backwards;
+}
+
+.big:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.big:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.big:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+@keyframes starPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .big {
+    animation: none;
+  }
 }
