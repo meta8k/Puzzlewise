@@ -4,10 +4,14 @@ import type { Puzzle } from "../../src/content/schema";
 import camp1Seed from "../../src/content/puzzles/camp1.json";
 import camp2Seed from "../../src/content/puzzles/camp2.json";
 
-const RATE_LIMIT_MAX_REQUESTS = 20;
+// Netlify's own synchronous function time limit is 10s on most plans (up to
+// 26s on some). We aim well under that per request, and the client fires
+// several small requests in parallel instead of one big slow one - see
+// src/services/generatePuzzles.ts.
+const RATE_LIMIT_MAX_REQUESTS = 80;
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
-const MAX_COUNT = 10;
-const ANTHROPIC_TIMEOUT_MS = 25_000;
+const MAX_COUNT = 4;
+const ANTHROPIC_TIMEOUT_MS = 8_500;
 
 // Best-effort, in-memory only: resets on cold start and isn't shared across
 // concurrent function instances. Good enough to blunt casual overuse
@@ -91,9 +95,14 @@ export const handler: Handler = async (event) => {
     });
   }
 
-  const model = process.env.CLAUDE_MODEL || "claude-sonnet-5";
+  // Haiku by default: it's meaningfully faster, which matters a lot here -
+  // the whole request has to finish inside Netlify's ~10s function limit.
+  // Set CLAUDE_MODEL to override (e.g. back to claude-sonnet-5) if you're
+  // on a Netlify plan with a longer function timeout and want richer
+  // puzzles over speed.
+  const model = process.env.CLAUDE_MODEL || "claude-haiku-4-5-20251001";
   const campInfo = CAMP_NAMES[camp];
-  const examples = pickExamples(camp, level, 3);
+  const examples = pickExamples(camp, level, 2);
 
   const systemPrompt = buildGenerationSystemPrompt({
     campName: campInfo.name,
@@ -115,7 +124,10 @@ export const handler: Handler = async (event) => {
       },
       body: JSON.stringify({
         model,
-        max_tokens: 4096,
+        // Sized to the batch, not a flat 4096 - a smaller ceiling keeps
+        // worst-case generation time down, which is what actually matters
+        // for fitting inside Netlify's function time limit.
+        max_tokens: Math.min(2000, 250 * count + 300),
         system: systemPrompt,
         messages: [{ role: "user", content: `Generate ${count} puzzles now.` }],
       }),

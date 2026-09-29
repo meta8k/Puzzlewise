@@ -70,10 +70,23 @@ API key is never exposed to visitors. To turn it on:
 2. In your Netlify site's dashboard: **Site configuration → Environment
    variables → Add a variable**.
    - `ANTHROPIC_API_KEY` — your key (required).
-   - `CLAUDE_MODEL` — optional, defaults to `claude-sonnet-5`. You can set
-     it to `claude-haiku-4-5-20251001` for a cheaper/faster option.
+   - `CLAUDE_MODEL` — optional, defaults to `claude-haiku-4-5-20251001`
+     (fast). You can set it to `claude-sonnet-5` for richer puzzles, but
+     only if your Netlify plan's function timeout is long enough to fit it
+     (see the timeout note below) — otherwise generation will fail.
 3. Redeploy the site (Netlify → Deploys → Trigger deploy) so the function
    picks up the new variables.
+
+**Why speed matters here, and how the 8 puzzles actually get generated:**
+Netlify's serverless functions have a hard time limit per request — 10
+seconds on most plans, longer on some paid tiers — and asking an AI for 8
+fully-written puzzles (each with 3 hints and an explanation) in one go can
+easily take longer than that. To stay well under the limit, the app fires
+**4 small parallel requests** (2 puzzles each) instead of 1 big one, and
+defaults to the faster Haiku model. If your Netlify plan allows longer
+function times and you'd rather trade some speed for quality, switching
+`CLAUDE_MODEL` to `claude-sonnet-5` is safe to try — just expect it to fail
+more often on the free tier's 10-second limit.
 
 **Safety note:** generated puzzles are shown to children immediately, with
 no adult review step — that's what makes the button feel instant and fun.
@@ -85,10 +98,13 @@ In its place, every generated puzzle automatically passes through:
   explanation, and answers.
 - The function also enforces its own puzzle type restriction (only
   riddles and limericks, matching what Phase 1 can render) and a basic
-  rate limit (20 requests/hour per visitor) to control cost and abuse.
+  rate limit (roughly 20 "Generate" clicks/hour per visitor, since each
+  click now fires 4 requests) to control cost and abuse.
 
 Anything that fails any check is silently dropped before it ever reaches
 the app — the child only ever sees puzzles that passed all of the above.
+If only some of the 4 parallel requests succeed, you still get whatever
+puzzles came through rather than an all-or-nothing failure.
 
 **Testing locally:** the plain `npm run dev` server can't run Netlify
 functions. To test this feature on your own machine before deploying, use

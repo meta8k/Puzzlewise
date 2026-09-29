@@ -1,14 +1,24 @@
 import type { Puzzle } from "../content/schema";
 
-const TIMEOUT_MS = 30_000;
+// Kept small deliberately: Netlify's synchronous function time limit is
+// ~10s on most plans, and asking the AI for a big batch of detailed
+// puzzles in one call risks running past that. Firing several small
+// requests in parallel finishes faster overall than one big one, since
+// each gets its own fresh time budget.
+const CHUNK_SIZE = 2;
+const REQUEST_TIMEOUT_MS = 9_500;
+
+type ChunkResult =
+  | { ok: true; puzzles: Puzzle[] }
+  | { ok: false; message: string; debug?: string };
 
 export type GeneratePuzzlesResult =
   | { ok: true; puzzles: Puzzle[] }
   | { ok: false; message: string; debug?: string };
 
-export async function generatePuzzles(camp: number, level: number, count: number): Promise<GeneratePuzzlesResult> {
+async function fetchChunk(camp: number, level: number, count: number): Promise<ChunkResult> {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
   try {
     const response = await fetch("/.netlify/functions/generate-puzzles", {
@@ -47,4 +57,26 @@ export async function generatePuzzles(camp: number, level: number, count: number
   } finally {
     clearTimeout(timeout);
   }
+}
+
+export async function generatePuzzles(camp: number, level: number, count: number): Promise<GeneratePuzzlesResult> {
+  const chunkCounts: number[] = [];
+  let remaining = count;
+  while (remaining > 0) {
+    const size = Math.min(CHUNK_SIZE, remaining);
+    chunkCounts.push(size);
+    remaining -= size;
+  }
+
+  const results = await Promise.all(chunkCounts.map((size) => fetchChunk(camp, level, size)));
+
+  const puzzles = results.flatMap((r) => (r.ok ? r.puzzles : []));
+  if (puzzles.length > 0) {
+    return { ok: true, puzzles };
+  }
+
+  const firstFailure = results.find((r): r is Extract<ChunkResult, { ok: false }> => !r.ok);
+  return (
+    firstFailure ?? { ok: false, message: "Couldn't generate new puzzles right now. Please try again." }
+  );
 }
