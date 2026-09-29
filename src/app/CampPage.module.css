@@ -1,7 +1,9 @@
 .page {
   max-width: 640px;
   margin: 0 auto;
+  min-height: 100vh;
   padding: 1rem 1rem 3rem;
+  background: linear-gradient(180deg, var(--palette-bg) 0%, var(--color-bg) 45%);
 }
 
 .backLink {
@@ -9,6 +11,12 @@
   margin-bottom: 1rem;
   color: var(--color-text);
   font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.backLink:hover,
+.backLink:focus-visible {
+  text-decoration: underline;
 }
 
 .title {
@@ -44,17 +52,44 @@
 .level {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
   padding: 1rem 1.25rem;
   border-radius: 20px;
-  background: var(--palette-bg);
+  background: var(--color-surface);
   border: 3px solid var(--palette-border);
   min-height: 48px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.levelList a:hover .level,
+.levelList a:focus-visible .level {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.levelNumber {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--palette-accent);
+  color: var(--palette-accent-contrast);
 }
 
 .locked {
   filter: grayscale(0.85);
   opacity: 0.75;
+}
+
+.levelBody {
+  flex: 1;
 }
 
 .levelName {
@@ -66,4 +101,10 @@
   margin: 0.15rem 0 0;
   font-size: 0.95rem;
   opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .level {
+    transition: none;
+  }
 }

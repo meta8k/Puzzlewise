@@ -21,7 +21,8 @@ export function CampPage() {
         ← Back to the mountain
       </Link>
       <h1 className={styles.title}>
-        {camp.name} <span className={styles.ageRange}>(ages {camp.ageRange})</span>
+        <span aria-hidden="true">{camp.emoji}</span> {camp.name}{" "}
+        <span className={styles.ageRange}>(ages {camp.ageRange})</span>
       </h1>
       <p className={styles.tagline}>{camp.tagline}</p>
 
@@ -34,7 +35,10 @@ export function CampPage() {
 
           const body = (
             <div className={[styles.level, unlocked ? "" : styles.locked].join(" ")}>
-              <div>
+              <span className={styles.levelNumber} aria-hidden="true">
+                {level}
+              </span>
+              <div className={styles.levelBody}>
                 <h2 className={styles.levelName}>Level {level}</h2>
                 <p className={styles.levelProgress}>
                   {solved}/{puzzles.length} solved
