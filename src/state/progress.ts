@@ -1,4 +1,4 @@
-const STORAGE_KEY = "puzzle-peaks:progress:v1";
+const STORAGE_KEY = "puzzle-peaks:progress:v2";
 
 export type PuzzleResult = {
   solved: boolean;
@@ -6,23 +6,32 @@ export type PuzzleResult = {
   hintsUsed: number;
 };
 
+export type LevelSessionResult = {
+  bestSolved: number;
+  bestStars: number;
+  totalOutOf: number;
+  attempts: number;
+};
+
 export type ProgressData = {
   puzzles: Record<string, PuzzleResult>;
+  levelSessions: Record<string, LevelSessionResult>;
 };
 
 function emptyProgress(): ProgressData {
-  return { puzzles: {} };
+  return { puzzles: {}, levelSessions: {} };
 }
 
 function safeReadStorage(): ProgressData {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return emptyProgress();
-    const parsed = JSON.parse(raw) as ProgressData;
-    if (!parsed || typeof parsed !== "object" || !parsed.puzzles) {
-      return emptyProgress();
-    }
-    return parsed;
+    const parsed = JSON.parse(raw) as Partial<ProgressData>;
+    if (!parsed || typeof parsed !== "object") return emptyProgress();
+    return {
+      puzzles: parsed.puzzles ?? {},
+      levelSessions: parsed.levelSessions ?? {},
+    };
   } catch {
     return emptyProgress();
   }
@@ -37,10 +46,18 @@ function safeWriteStorage(data: ProgressData): void {
   }
 }
 
+function levelKey(camp: number, level: number): string {
+  return `${camp}-${level}`;
+}
+
 export function getProgress(): ProgressData {
   return safeReadStorage();
 }
 
+/**
+ * Records the outcome of a single puzzle, kept mainly so a replayed local
+ * (non-generated) puzzle can say "you've solved this one before".
+ */
 export function recordPuzzleResult(puzzleId: string, result: PuzzleResult): void {
   const data = safeReadStorage();
   const existing = data.puzzles[puzzleId];
@@ -58,29 +75,37 @@ export function getPuzzleResult(puzzleId: string): PuzzleResult | undefined {
   return safeReadStorage().puzzles[puzzleId];
 }
 
-export function levelStars(puzzleIds: string[]): number {
+/**
+ * Records how a full level playthrough went - generated puzzles included,
+ * since they don't have stable ids to track individually. Progression is
+ * based on the best result ever achieved for that camp/level, not on
+ * solving any particular fixed set of puzzles.
+ */
+export function recordLevelSession(camp: number, level: number, solved: number, total: number, stars: number): void {
   const data = safeReadStorage();
-  return puzzleIds.reduce((sum, id) => sum + (data.puzzles[id]?.stars ?? 0), 0);
+  const key = levelKey(camp, level);
+  const existing = data.levelSessions[key];
+  data.levelSessions[key] = {
+    bestSolved: Math.max(solved, existing?.bestSolved ?? 0),
+    bestStars: Math.max(stars, existing?.bestStars ?? 0),
+    totalOutOf: total,
+    attempts: (existing?.attempts ?? 0) + 1,
+  };
+  safeWriteStorage(data);
 }
 
-export function levelSolvedCount(puzzleIds: string[]): number {
-  const data = safeReadStorage();
-  return puzzleIds.filter((id) => data.puzzles[id]?.solved).length;
+export function getLevelSession(camp: number, level: number): LevelSessionResult | undefined {
+  return safeReadStorage().levelSessions[levelKey(camp, level)];
 }
 
-export function isLevelUnlocked(
-  camp: number,
-  level: number,
-  puzzlesByLevel: (camp: number, level: number) => { id: string }[],
-): boolean {
+export function isLevelUnlocked(camp: number, level: number): boolean {
   if (camp === 1 && level === 1) return true;
   const prevCamp = level === 1 ? camp - 1 : camp;
   const prevLevel = level === 1 ? 3 : level - 1;
   if (prevCamp < 1) return true;
-  const prevPuzzles = puzzlesByLevel(prevCamp, prevLevel);
-  if (prevPuzzles.length === 0) return false;
-  const solved = levelSolvedCount(prevPuzzles.map((p) => p.id));
-  return solved >= Math.min(5, prevPuzzles.length);
+  const session = getLevelSession(prevCamp, prevLevel);
+  if (!session) return false;
+  return session.bestSolved >= Math.min(5, session.totalOutOf);
 }
 
 export function resetProgress(): void {

@@ -4,7 +4,7 @@ const TIMEOUT_MS = 30_000;
 
 export type GeneratePuzzlesResult =
   | { ok: true; puzzles: Puzzle[] }
-  | { ok: false; message: string };
+  | { ok: false; message: string; debug?: string };
 
 export async function generatePuzzles(camp: number, level: number, count: number): Promise<GeneratePuzzlesResult> {
   const controller = new AbortController();
@@ -24,7 +24,10 @@ export async function generatePuzzles(camp: number, level: number, count: number
       const message =
         (data && typeof data.error === "string" && data.error) ||
         "Couldn't generate new puzzles right now. Please try again.";
-      return { ok: false, message };
+      const debug = data?.debug
+        ? `HTTP ${response.status}${data.debug.status ? ` (upstream ${data.debug.status})` : ""}: ${data.debug.body ?? ""}`
+        : `HTTP ${response.status}`;
+      return { ok: false, message, debug };
     }
 
     if (!data || !Array.isArray(data.puzzles) || data.puzzles.length === 0) {
@@ -39,6 +42,7 @@ export async function generatePuzzles(camp: number, level: number, count: number
       message: aborted
         ? "That took too long. Please try again."
         : "Couldn't reach the puzzle generator. Please try again.",
+      debug: err instanceof Error ? err.message : String(err),
     };
   } finally {
     clearTimeout(timeout);

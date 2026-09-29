@@ -125,7 +125,20 @@ export const handler: Handler = async (event) => {
     if (!response.ok) {
       const errText = await response.text().catch(() => "");
       console.error("Anthropic API error", response.status, errText);
-      return jsonResponse(502, { error: "The puzzle generator is having trouble right now. Please try again." });
+
+      let friendly = "The puzzle generator is having trouble right now. Please try again.";
+      if (response.status === 401 || response.status === 403) {
+        friendly = "The AI key doesn't seem to be working. Ask a grown-up to double-check ANTHROPIC_API_KEY in Netlify.";
+      } else if (response.status === 404) {
+        friendly = "The AI model name isn't recognized. Ask a grown-up to check the CLAUDE_MODEL setting in Netlify.";
+      } else if (response.status === 429) {
+        friendly = "The AI is busy right now. Please try again in a moment.";
+      }
+
+      return jsonResponse(502, {
+        error: friendly,
+        debug: { status: response.status, body: errText.slice(0, 300) },
+      });
     }
 
     const data = (await response.json()) as { content?: { type: string; text?: string }[] };
@@ -136,14 +149,20 @@ export const handler: Handler = async (event) => {
     try {
       rawPuzzles = JSON.parse(cleaned);
     } catch {
-      return jsonResponse(502, { error: "The generator returned something we couldn't read. Please try again." });
+      console.error("Could not parse model output as JSON", cleaned.slice(0, 300));
+      return jsonResponse(502, {
+        error: "The generator returned something we couldn't read. Please try again.",
+        debug: { body: cleaned.slice(0, 300) },
+      });
     }
 
-    const { accepted, rejectedCount } = validateAndFilterGenerated(rawPuzzles, camp, level);
+    const { accepted, rejectedCount, rejectionReasons } = validateAndFilterGenerated(rawPuzzles, camp, level);
 
     if (accepted.length === 0) {
+      console.error("All generated puzzles were rejected", rejectionReasons);
       return jsonResponse(502, {
         error: "Couldn't come up with fresh puzzles that passed our safety checks this time. Please try again.",
+        debug: { body: rejectionReasons.join(", ") },
       });
     }
 

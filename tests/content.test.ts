@@ -13,11 +13,11 @@ describe("puzzle content", () => {
     expect(uniqueIds.size).toBe(ids.length);
   });
 
-  it("has 48 puzzles for each of camp 1 and camp 2, 16 per level", () => {
+  it("has 24 puzzles for each of camp 1 and camp 2, 8 per level", () => {
     for (const camp of [1, 2]) {
       for (const level of [1, 2, 3]) {
         const count = allPuzzles.filter((p) => p.camp === camp && p.level === level).length;
-        expect(count).toBe(16);
+        expect(count).toBe(8);
       }
     }
   });

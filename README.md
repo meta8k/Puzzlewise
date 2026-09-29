@@ -4,11 +4,13 @@ A riddle and puzzle website for kids aged 6-12. Climb a mountain by solving
 riddles and limericks, camp by camp.
 
 This is **Phase 1**: the playable core. Only Camp 1 (Meadow) and Camp 2
-(Forest) have content so far — 96 puzzles in total, 16 per level. Each
-level draws a fresh, non-repeating set of 8 from its pool of 16 every time
-it's opened, so replaying a level doesn't always show the same puzzles.
-Later phases will add the harder camps, online trivia/rhyme games, a
-grown-up puzzle generator, and deployment to a live website.
+(Forest) have content so far. Opening a level doesn't show any puzzles
+right away — it shows a single **✨ Generate 8 Puzzles** button. Clicking
+it asks AI to write 8 brand-new riddles/limericks on the spot, so every
+playthrough is genuinely different. There are also 8 built-in puzzles per
+level (24 per camp) kept as a fallback for when generation isn't set up or
+fails. Later phases will add the harder camps, online trivia/rhyme games,
+and deployment to a live website.
 
 ## How to run it
 
@@ -38,24 +40,27 @@ correctly.
 1. You'll land on the **home page** — click **Start Climbing** to enter the
    mountain.
 2. Click **Meadow** (Camp 1), then **Level 1**.
-3. Read the riddle (or click the 🔊 speaker icon to have it read aloud).
-4. Type an answer and click **Check**.
+3. Click **✨ Generate 8 Puzzles**. This needs the AI generation setup
+   below — without it, you'll see a friendly "couldn't generate" message
+   with a **Try again** button and an **or play the 8 built-in puzzles
+   instead** link so the level is never a dead end.
+4. Read the riddle (or click the 🔊 speaker icon to have it read aloud).
+5. Type an answer and click **Check**.
    - A wrong answer gives a gentle nudge and offers a hint.
    - You get 3 tries; after the 3rd wrong try, the answer and explanation
      are revealed automatically.
    - Stuck or bored of one? Click **Skip this one** to move on any time.
    - A correct answer shows stars and a short explanation of why that's
      the answer.
-5. Click **Next puzzle** to continue, or **Exit level** to go back.
-6. Progress is saved in your browser automatically. Camp 2 (Forest)
-   unlocks once you've solved at least 5 of the 8 puzzles in Camp 1's
-   final level — that's the "climbing the mountain" rule.
-7. On a camp's level list, click **✨ Generate new puzzles** under an
-   unlocked level to get 8 brand-new, never-seen-before puzzles written on
-   the spot by AI. This needs the AI generation setup below — without it,
-   you'll see a friendly "couldn't generate" message with a retry button.
+6. Click **Next puzzle** to continue, or **Exit level** to go back.
+7. At the end, click **✨ Generate 8 more!** for a completely different
+   set, or head back to the camp.
+8. Progress is saved in your browser automatically, tracked as your best
+   result for that level (generated or built-in, whichever you solved
+   more of). Camp 2 (Forest) unlocks once you've solved at least 5 of 8 in
+   Camp 1's final level — that's the "climbing the mountain" rule.
 
-## Setting up AI-generated puzzles ("✨ Generate new puzzles")
+## Setting up AI-generated puzzles ("✨ Generate 8 Puzzles")
 
 This feature calls Anthropic's API from a Netlify serverless function
 (`netlify/functions/generate-puzzles.ts`) — never from the browser, so your
@@ -92,6 +97,13 @@ instead of `npm run dev`) with a local `.env` file containing your
 `ANTHROPIC_API_KEY` (already covered by `.gitignore`, so it won't be
 committed).
 
+**If generation fails on your live site:** the error screen shows a small
+line of technical detail in parentheses (e.g. `(HTTP 502 (upstream 401): ...)`).
+That's meant for you, not the child — screenshot or copy it if you need
+help debugging. The most common causes are a typo in `ANTHROPIC_API_KEY`,
+an invalid or out-of-credit key, or a deploy that happened before the
+variable was added (trigger a fresh deploy after adding it).
+
 ## Project layout
 
 ```
@@ -101,7 +113,7 @@ src/
   puzzles/        one component per puzzle type + registry.tsx
   content/        puzzles/*.json, schema.ts (validation rules), generation.ts (AI prompt + safety filter)
   services/       speech.ts (read-aloud), generatePuzzles.ts (calls the generation function)
-  state/          progress.ts, puzzleDeck.ts (saved to your browser's localStorage)
+  state/          progress.ts (saved to your browser's localStorage)
   lib/            answerMatching.ts, shuffle.ts
 netlify/functions/generate-puzzles.ts   the serverless AI-generation endpoint
 tests/            automated checks (vitest)

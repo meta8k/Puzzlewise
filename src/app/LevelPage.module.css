@@ -163,3 +163,137 @@
   opacity: 0.7;
   font-size: 0.95rem;
 }
+
+.idleCard {
+  background: var(--color-surface);
+  border: 3px solid var(--palette-border);
+  border-radius: 28px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.idleEmoji {
+  font-size: 3.5rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .idleEmoji {
+    animation: none;
+  }
+}
+
+.idleTitle {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.idleBody {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 26rem;
+}
+
+.generateButton {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+}
+
+.loadingCard {
+  background: var(--color-surface);
+  border: 3px solid var(--palette-border);
+  border-radius: 28px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.sparkle {
+  font-size: 3rem;
+  animation: spin 2.2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(15deg) scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkle {
+    animation: none;
+  }
+}
+
+.loadingTitle {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.loadingLine {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  min-height: 1.5em;
+}
+
+.debugText {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+  margin: 0;
+  word-break: break-word;
+  max-width: 28rem;
+}
+
+.secondaryLink {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-height: 44px;
+}
+
+.secondaryLink:hover,
+.secondaryLink:focus-visible {
+  color: var(--color-text);
+}
+
+.freshBadge {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-strong);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
