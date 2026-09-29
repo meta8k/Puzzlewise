@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Puzzle Peaks uses client-side routing (HashRouter), so every URL
+# already resolves to index.html without needing a server-side rewrite.
+# This catch-all is kept as a safety net in case that ever changes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
