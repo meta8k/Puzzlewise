@@ -1,0 +1,77 @@
+.loadingCard {
+  background: var(--color-surface);
+  border: 3px solid var(--palette-border);
+  border-radius: 28px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.sparkle {
+  font-size: 3rem;
+  animation: spin 2.2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(15deg) scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkle {
+    animation: none;
+  }
+}
+
+.loadingTitle {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.loadingLine {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  min-height: 1.5em;
+}
+
+.backLinkSmall {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.backLinkSmall:hover,
+.backLinkSmall:focus-visible {
+  text-decoration: underline;
+}
+
+.generatedLabel {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  background: var(--color-surface);
+  border: 2px solid var(--palette-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+}
+
+.freshBadge {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-strong);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}

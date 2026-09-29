@@ -49,8 +49,13 @@ export function CampPage() {
           );
 
           return (
-            <li key={level}>
+            <li key={level} className={styles.levelItem}>
               {unlocked ? <Link to={`/camp/${camp.id}/level/${level}`}>{body}</Link> : body}
+              {unlocked && (
+                <Link to={`/camp/${camp.id}/level/${level}/generated`} className={styles.generateLink}>
+                  ✨ Generate new puzzles
+                </Link>
+              )}
             </li>
           );
         })}
