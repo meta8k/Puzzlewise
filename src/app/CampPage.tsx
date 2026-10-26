@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { campInfo } from "./camps";
 import { getLevelSession, isLevelUnlocked } from "../state/progress";
+import { getAllLevelsUnlocked } from "../state/settings";
 import { Stars } from "../components/Stars";
 import styles from "./CampPage.module.css";
 
@@ -10,7 +11,7 @@ export function CampPage() {
   const { campId } = useParams();
   const camp = campInfo(Number(campId));
 
-  if (!camp || !camp.hasContent) {
+  if (!camp || (!camp.hasContent && !getAllLevelsUnlocked())) {
     return <Navigate to="/mountain" replace />;
   }
 
@@ -24,6 +25,11 @@ export function CampPage() {
         <span className={styles.ageRange}>(ages {camp.ageRange})</span>
       </h1>
       <p className={styles.tagline}>{camp.tagline}</p>
+      {!camp.hasContent && (
+        <p className={styles.noContentNote}>
+          This camp has no built-in puzzles yet — every level here is ✨ AI-generated only.
+        </p>
+      )}
 
       <ul className={styles.levelList}>
         {LEVELS.map((level) => {

@@ -60,9 +60,12 @@ correctly.
    more of). Camp 2 (Forest) unlocks once you've solved at least 5 of 8 in
    Camp 1's final level — that's the "climbing the mountain" rule.
 9. On the mountain screen, the **🔓 Unlock all levels** switch lets you
-   turn that rule off entirely — flip it on and every level with content
-   becomes playable in any order, no progress required. Flip it back off
-   to return to normal progression. The setting is saved per device.
+   turn that rule off entirely — flip it on and every camp and level
+   becomes playable in any order, no progress required. This includes
+   Camps 3-5 (River, Cliffs, Summit), which have no built-in puzzles yet —
+   those levels only work through **✨ Generate**, since there's no local
+   content to fall back to. Flip the switch back off to return to normal
+   progression. The setting is saved per device.
 
 ## Setting up AI-generated puzzles ("✨ Generate 8 Puzzles")
 

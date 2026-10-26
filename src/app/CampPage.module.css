@@ -35,6 +35,16 @@
   font-size: 1.1rem;
 }
 
+.noContentNote {
+  margin: -1.25rem 0 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 2px dashed var(--palette-border);
+  border-radius: 14px;
+  padding: 0.6rem 0.9rem;
+}
+
 .levelList {
   list-style: none;
   margin: 0;

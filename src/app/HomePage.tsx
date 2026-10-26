@@ -14,6 +14,10 @@ function isCampUnlocked(campId: number): boolean {
 export function HomePage() {
   const { theme, toggleTheme } = useTheme();
   const [allUnlocked, setAllUnlocked] = useAllLevelsUnlocked();
+  // "Unlock all levels" should mean *all* camps, not just the ones that
+  // happen to ship with built-in puzzles. Camps without local content
+  // still work via the AI-generate flow.
+  const campsPlayable = (hasContent: boolean) => hasContent || allUnlocked;
 
   return (
     <div className={styles.page}>
@@ -49,7 +53,7 @@ export function HomePage() {
 
       <ol className={styles.mountain}>
         {CAMPS.map((camp) => {
-          const unlocked = camp.hasContent && isCampUnlocked(camp.id);
+          const unlocked = campsPlayable(camp.hasContent) && isCampUnlocked(camp.id);
           const content = (
             <div className={[styles.camp, camp.paletteClass, unlocked ? "" : styles.locked].join(" ")}>
               <span className={styles.campNumber}>{camp.id}</span>
