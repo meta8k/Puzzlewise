@@ -59,6 +59,10 @@ correctly.
    result for that level (generated or built-in, whichever you solved
    more of). Camp 2 (Forest) unlocks once you've solved at least 5 of 8 in
    Camp 1's final level — that's the "climbing the mountain" rule.
+9. On the mountain screen, the **🔓 Unlock all levels** switch lets you
+   turn that rule off entirely — flip it on and every level with content
+   becomes playable in any order, no progress required. Flip it back off
+   to return to normal progression. The setting is saved per device.
 
 ## Setting up AI-generated puzzles ("✨ Generate 8 Puzzles")
 
@@ -129,7 +133,7 @@ src/
   puzzles/        one component per puzzle type + registry.tsx
   content/        puzzles/*.json, schema.ts (validation rules), generation.ts (AI prompt + safety filter)
   services/       speech.ts (read-aloud), generatePuzzles.ts (calls the generation function)
-  state/          progress.ts (saved to your browser's localStorage)
+  state/          progress.ts, settings.ts (saved to your browser's localStorage)
   lib/            answerMatching.ts, shuffle.ts
 netlify/functions/generate-puzzles.ts   the serverless AI-generation endpoint
 tests/            automated checks (vitest)
