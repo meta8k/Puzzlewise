@@ -1,3 +1,5 @@
+import { getAllLevelsUnlocked } from "./settings";
+
 const STORAGE_KEY = "puzzle-peaks:progress:v2";
 
 export type PuzzleResult = {
@@ -99,6 +101,7 @@ export function getLevelSession(camp: number, level: number): LevelSessionResult
 }
 
 export function isLevelUnlocked(camp: number, level: number): boolean {
+  if (getAllLevelsUnlocked()) return true;
   if (camp === 1 && level === 1) return true;
   const prevCamp = level === 1 ? camp - 1 : camp;
   const prevLevel = level === 1 ? 3 : level - 1;

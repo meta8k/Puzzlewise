@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { CAMPS } from "./camps";
 import { isLevelUnlocked } from "../state/progress";
+import { useAllLevelsUnlocked } from "../state/settings";
 import { useTheme } from "./theme";
+import { ToggleSwitch } from "../components/ToggleSwitch";
 import styles from "./HomePage.module.css";
 
 function isCampUnlocked(campId: number): boolean {
@@ -11,6 +13,7 @@ function isCampUnlocked(campId: number): boolean {
 
 export function HomePage() {
   const { theme, toggleTheme } = useTheme();
+  const [allUnlocked, setAllUnlocked] = useAllLevelsUnlocked();
 
   return (
     <div className={styles.page}>
@@ -29,6 +32,20 @@ export function HomePage() {
         </button>
       </header>
       <p className={styles.subtitle}>Climb the mountain by solving riddles and puzzles!</p>
+
+      <div className={styles.settingsCard}>
+        <ToggleSwitch
+          id="unlock-all-levels"
+          checked={allUnlocked}
+          onChange={setAllUnlocked}
+          label="🔓 Unlock all levels"
+          description={
+            allUnlocked
+              ? "Every camp and level is open to play, in any order."
+              : "Camps and levels unlock one at a time as they're solved."
+          }
+        />
+      </div>
 
       <ol className={styles.mountain}>
         {CAMPS.map((camp) => {

@@ -7,6 +7,7 @@ import {
   recordPuzzleResult,
   resetProgress,
 } from "../src/state/progress";
+import { setAllLevelsUnlocked } from "../src/state/settings";
 
 beforeEach(() => {
   window.localStorage.clear();
@@ -82,6 +83,20 @@ describe("isLevelUnlocked", () => {
     expect(isLevelUnlocked(2, 1)).toBe(false);
     recordLevelSession(1, 3, 6, 8, 18);
     expect(isLevelUnlocked(2, 1)).toBe(true);
+  });
+
+  it("the 'unlock all levels' setting overrides normal progression gating", () => {
+    expect(isLevelUnlocked(2, 3)).toBe(false);
+    setAllLevelsUnlocked(true);
+    expect(isLevelUnlocked(2, 3)).toBe(true);
+    expect(isLevelUnlocked(1, 1)).toBe(true);
+  });
+
+  it("turning the setting back off restores normal progression gating", () => {
+    setAllLevelsUnlocked(true);
+    expect(isLevelUnlocked(2, 3)).toBe(true);
+    setAllLevelsUnlocked(false);
+    expect(isLevelUnlocked(2, 3)).toBe(false);
   });
 });
 
