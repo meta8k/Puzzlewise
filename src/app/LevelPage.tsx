@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { campInfo } from "./camps";
 import { puzzlesForCampLevel } from "../content/loadPuzzles";
 import { getPuzzleResult, isLevelUnlocked, recordLevelSession, recordPuzzleResult } from "../state/progress";
+import { getAllLevelsUnlocked } from "../state/settings";
 import { getPuzzleComponent } from "../puzzles/registry";
 import { generatePuzzles } from "../services/generatePuzzles";
 import { shuffle } from "../lib/shuffle";
@@ -40,7 +41,7 @@ export function LevelPage() {
   const { campId, levelId } = useParams();
   const camp = campInfo(Number(campId));
   const level = Number(levelId);
-  const validRoute = Boolean(camp && camp.hasContent && [1, 2, 3].includes(level));
+  const validRoute = Boolean(camp && (camp.hasContent || getAllLevelsUnlocked()) && [1, 2, 3].includes(level));
   const unlocked = validRoute && isLevelUnlocked(camp!.id, level);
 
   const [status, setStatus] = useState<Status>("idle");
@@ -93,9 +94,11 @@ export function LevelPage() {
   }
 
   function playBuiltInInstead() {
+    const builtIn = puzzlesForCampLevel(camp!.id, level);
+    if (builtIn.length === 0) return;
     resetSession();
     setUsingFallback(true);
-    setPuzzles(shuffle(puzzlesForCampLevel(camp!.id, level)));
+    setPuzzles(shuffle(builtIn));
     setStatus("playing");
   }
 
@@ -147,9 +150,11 @@ export function LevelPage() {
           <Button className={styles.generateButton} onClick={startGeneration}>
             ✨ Generate {PUZZLES_PER_LEVEL} Puzzles
           </Button>
-          <button type="button" className={styles.secondaryLink} onClick={playBuiltInInstead}>
-            or play the {PUZZLES_PER_LEVEL} built-in puzzles instead
-          </button>
+          {campEl.hasContent && (
+            <button type="button" className={styles.secondaryLink} onClick={playBuiltInInstead}>
+              or play the {PUZZLES_PER_LEVEL} built-in puzzles instead
+            </button>
+          )}
         </div>
       </div>
     );
@@ -182,9 +187,11 @@ export function LevelPage() {
           <div className={styles.actions}>
             <Button onClick={startGeneration}>Try again</Button>
           </div>
-          <button type="button" className={styles.secondaryLink} onClick={playBuiltInInstead}>
-            or play the {PUZZLES_PER_LEVEL} built-in puzzles instead
-          </button>
+          {campEl.hasContent && (
+            <button type="button" className={styles.secondaryLink} onClick={playBuiltInInstead}>
+              or play the {PUZZLES_PER_LEVEL} built-in puzzles instead
+            </button>
+          )}
           <Link to={`/camp/${campEl.id}`} className={styles.backLink}>
             ← Back to {campEl.name}
           </Link>
